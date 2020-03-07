@@ -214,6 +214,7 @@ Station Info (``0x19``)
    +------------------+--------+---------------------------------------------------+---------+
    | Station Status   | 1      | :ref:`Station Status <fms_ds_station_status>`     |         |
    +------------------+--------+---------------------------------------------------+---------+
+If the Bad Station Status is sent the Alliance Station field represents the Alliance Station the Driver Station should move to.
 
 .. _fms_ds_station_status:
 
@@ -223,15 +224,15 @@ Station Status
 .. table::
    :widths: auto
 
-   +-----+---------+-----------------------------------------------+
-   | Num | Status  | Comment                                       |
-   +=====+=========+===============================================+
-   | 0   | Good    | Sent if FMS Driver Station context is valid   |
-   +-----+---------+-----------------------------------------------+
-   | 1   | Bad     | Never sent?                                   |
-   +-----+---------+-----------------------------------------------+
-   | 2   | Waiting | Sent if FMS Driver Station context is invalid |
-   +-----+---------+-----------------------------------------------+
+   +-----+---------+------------------------------------------------------------------------------+
+   | Num | Status  | Comment                                                                      |
+   +=====+=========+==============================================================================+
+   | 0   | Good    | Sent if FMS Driver Station context is valid                                  |
+   +-----+---------+------------------------------------------------------------------------------+
+   | 1   | Bad     | Sent if FMS detects that the Driver Station is in the wrong Alliance Station |
+   +-----+---------+------------------------------------------------------------------------------+
+   | 2   | Waiting | Sent if FMS Driver Station context is invalid                                |
+   +-----+---------+------------------------------------------------------------------------------+
 
 
 .. _fms_ds_challenge_question:
